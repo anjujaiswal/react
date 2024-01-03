@@ -1,0 +1,22 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "react, learn",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/anjujaiswal/react.git"
+  },
+  "author": "Anju Jaiswal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anjujaiswal/react/issues"
+  },
+  "homepage": "https://github.com/anjujaiswal/react#readme",
+  "dependencies": {
+    "parcel": "^2.10.3"
+  }
+}

@@ -2,8 +2,9 @@
   "name": "react",
   "version": "1.0.0",
   "description": "react, learn",
-  "main": "app.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -17,6 +18,11 @@
   },
   "homepage": "https://github.com/anjujaiswal/react#readme",
   "dependencies": {
-    "parcel": "^2.10.3"
+    "parcel": "^2.10.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
   }
 }

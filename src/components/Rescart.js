@@ -1,4 +1,7 @@
-const Rescart = (props)=>{ 
+import {URLL} from "../utils/constants";
+
+const Rescart = (props)=>{
+  
     return (
         <div className="card">
            <div className="resimg">
@@ -7,7 +10,7 @@ const Rescart = (props)=>{
            <div className="details">
               <h3>{props.res.info.name}</h3>
               <h4>{props.res.info.avgRating}</h4>
-              <p>{props.res.info.cuisines}</p>
+              <p>{props.res.info.cuisines.join(", ")}</p>
            </div>
         </div>
     )

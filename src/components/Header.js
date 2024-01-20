@@ -1,6 +1,7 @@
-import { useAutocomplete } from '@mui/material';
+
 import logo from '../../images/logo.png';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 export const Header = ()=>{
     const [auth, setAuth] = useState("Login");
     const toggle = ()=>{
@@ -14,9 +15,9 @@ export const Header = ()=>{
             </div>
             <div className="nav-container">
                 <ul className="nav-items">
-                    <li  className="item">Home</li>
-                    <li className="item">About us</li>
-                    <li className="item">Contact us</li>
+                    <li  className="item"><Link to ="/">Home</Link></li>
+                    <li className="item"><Link to ="/about">About</Link></li>
+                    <li className="item"><Link to ="/contacts">Contact us</Link></li>
                     <button onClick={()=>{toggle()}}>{auth}</button>
                 </ul>
 

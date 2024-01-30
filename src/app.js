@@ -9,15 +9,25 @@ import Contact from "./components/Contacts";
 import ResMenu from "./components/ResMenu";
 import Error from "./components/Error";
 import Grocery from "./components/Grocery";
-
+import userContext from "./utils/useContext"; 
 const url  = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 // const Grocery = lazy(()=>{import("./components/Grocery")});
 const Applayout = () => {
+    const [userName, setUserName] = useState();
+    useEffect(()=>{
+        const data= {
+            name:"Anju"
+        }
+        setUserName(data.name);
+    },[])
     return (
-    <>
-        <Header/>
-        <Outlet/>
-    </>
+    <userContext.Provider value={{loggedInUser : userName, setUserName}}>
+        <div className="app">
+            <Header/>
+            <Outlet/>
+        </div>
+    </userContext.Provider>
+        
     );
 };
 const appRouter = createBrowserRouter([

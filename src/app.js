@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useEffect } from "react";
+import React, { useEffect, useState, useEffect, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter,Link,Outlet } from "react-router-dom";
 
@@ -8,9 +8,10 @@ import About from "./components/About";
 import Contact from "./components/Contacts";
 import ResMenu from "./components/ResMenu";
 import Error from "./components/Error";
+import Grocery from "./components/Grocery";
 
 const url  = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
-
+// const Grocery = lazy(()=>{import("./components/Grocery")});
 const Applayout = () => {
     return (
     <>
@@ -29,11 +30,15 @@ const appRouter = createBrowserRouter([
                 element:<Maincontent/>
             },
             {   
-                path:"about",
+                path:"/about",
                 element:<About/>
             },
             {
-                path:"contacts",
+                path:"/grocery",
+                element:<Suspense fallback={<h1>Loading grocery</h1>}><Grocery/></Suspense>
+            },
+            {
+                path:"/contacts",
                 element:<Contact/>
             },
             {

@@ -13,7 +13,7 @@ const Maincontent = () => {
         fetchData();
      }, [])
      const fetchData = async ()=>{
-         const data = await fetch(HOMEPAGE_URL)
+         const data = await fetch(HOMEPAGE_URL);
          const json = await data.json();
          const cards = json;
         //  console.log("xxx",cards?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
@@ -23,12 +23,12 @@ const Maincontent = () => {
     return filtered.length === 0 ? (<><Shimmer/></>):(
       
         <div className="main-body">
-            <div className="search">
-                <input type="input"  
+            <div className="search p-2">
+                <input type="input" className="m-2 outline outline-1"  
                 value= {searchValue} onChange={(e)=> {setSearchValue(e.target.value)}}
                 >
                 </input>
-                <button 
+                <button  className= "m-2 outline outline-1 p-1 rounded-xl w-[100]"
                 onClick={()=>{
                     const newfilter = res.filter((res1) =>{
                        return  res1.info.name.toLowerCase().includes(searchValue.toLowerCase());
@@ -36,7 +36,7 @@ const Maincontent = () => {
                     setFiltered(newfilter);
                 }}
                 > Search </button>
-                <button 
+                <button  className="p-1 outline outline-1 rounded-xl"
                 onClick={()=>{
                     const newfilter = res.filter((res1) =>{
                        return  res1.info.avgRating>=4;
@@ -45,7 +45,7 @@ const Maincontent = () => {
                 }}
                 > Filter by rating </button>
             </div>
-            <div className="cards">
+            <div className="cards flex flex-wrap">
                 {filtered.map((res)=> {
                     // console.log(res.info)
                     return <Link to = {"/res/"+res.info.id} key = {res.info.id} ><Rescart res = {res}/></Link>
